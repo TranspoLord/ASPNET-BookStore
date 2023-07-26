@@ -25,6 +25,14 @@ namespace BookStore.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
+            if(obj.Name == obj.DisplayOrder.ToString())
+            {
+                ModelState.AddModelError("name", "The provided name cannot be the same as the display order");
+            }
+            if (obj.Name.ToLower() == "test")
+            {
+                ModelState.AddModelError("", "Test is an invalid value");
+            }
             if (ModelState.IsValid)
             {
                 _db.Categories.Add(obj);
@@ -34,9 +42,32 @@ namespace BookStore.Controllers
             return View();
         }
 
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Category? catFromDB = _db.Categories.Find(id);
+            // Category? catFromDB2 = _db.Categories.FirstOrDefault(u => u.Id == id);
+            // Category? catFromDB3 = _db.Categories.Where(u => u.Id == id).FirstOrDefault();
+            if (catFromDB == null)
+            {
+                return NotFound();
+            }
+            return View(catFromDB);
+        }
 
-
+        [HttpPost]
+        public IActionResult Edit(Category obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Categories.Update(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
-
-
 }
