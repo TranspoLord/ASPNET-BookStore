@@ -1,5 +1,5 @@
-﻿using BookStore.Data;
-using BookStore.Models;
+﻿using BookStore.Models;
+using BookStore.DataAccess.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStore.Controllers
@@ -89,7 +89,7 @@ namespace BookStore.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Category obj = _db.Categories.Find(id);
+            Category? obj = _db.Categories.Find(id);
             if (obj == null)
             {
                 return NotFound();

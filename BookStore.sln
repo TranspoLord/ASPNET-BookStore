@@ -5,11 +5,11 @@ VisualStudioVersion = 17.7.33906.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore", "BookStore\BookStore.csproj", "{443D149A-CCC3-4540-BC66-F174C89B3F80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.DataAccess", "BookStore.DataAccess\BookStore.DataAccess.csproj", "{2AF538F4-AB8A-45AE-9E38-7F73EB7E4B6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.DataAccess", "BookStore.DataAccess\BookStore.DataAccess.csproj", "{2AF538F4-AB8A-45AE-9E38-7F73EB7E4B6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookstore.Models", "Bookstore.Models\Bookstore.Models.csproj", "{1019325D-7B21-45FB-AA85-A9A0360154DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Models", "Bookstore.Models\BookStore.Models.csproj", "{1019325D-7B21-45FB-AA85-A9A0360154DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookstore.Utility", "Bookstore.Utility\Bookstore.Utility.csproj", "{2D43D73F-61C2-4B5B-B117-779DB2D63024}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Utility", "Bookstore.Utility\BookStore.Utility.csproj", "{2D43D73F-61C2-4B5B-B117-779DB2D63024}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
