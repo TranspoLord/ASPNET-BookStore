@@ -1,4 +1,5 @@
 ﻿using BookStore.DataAccess.Data;
+using BookStore.DataAccess.Repository.IRepository;
 using BookStore.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStore.DataAccess.Repository.IRepository
+namespace BookStore.DataAccess.Repository
 {
     public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
@@ -15,10 +16,6 @@ namespace BookStore.DataAccess.Repository.IRepository
         public CategoryRepository(AppDatabaseContext db) : base(db)
         {
             _db = db;
-        }
-        public void Save()
-        {
-            _db.SaveChanges();
         }
 
         public void Update(Category obj)
